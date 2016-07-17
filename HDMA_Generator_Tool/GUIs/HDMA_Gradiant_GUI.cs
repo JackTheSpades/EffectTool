@@ -18,7 +18,7 @@ using System.Diagnostics;
 
 namespace HDMA_Generator_Tool
 {
-	public partial class HDMA_Gradiant_GUI : Form, ITab
+	public partial class HDMA_Gradiant_GUI : Form, IScreenshotUser
 	{
 		#region ITab Interface
 
@@ -61,7 +61,12 @@ namespace HDMA_Generator_Tool
 		public ComboBox[] ScreenSelectors { get; set; }
 		
 		#endregion
-		
+		#region IScreenshotUser
+
+		public Bitmap[] ScreenshotsImages { get; private set; }
+
+		#endregion
+
 		/// <summary>
 		/// The width that will be set if the GUI is displayed in BG mode (to cut out the ColorMath options)
 		/// </summary>
@@ -77,6 +82,8 @@ namespace HDMA_Generator_Tool
 		public HDMA_Gradiant_GUI()
 		{
 			InitializeComponent();
+
+			ScreenshotsImages = new Bitmap[tbcMainControl.TabPages.Count];
 
 			ScreenSelectors = new ComboBox[]
 			{
@@ -339,7 +346,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbSngScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_sngMath, sender, false);
+			LayerManager.AsignLayers(this, 1, _sngMath, sender, false);
 			UpdateSingleScreen();
 		}
 
@@ -462,7 +469,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbMulScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_mulMath, sender, false);
+			LayerManager.AsignLayers(this, 1, _mulMath, sender, false);
 			pcbMulMainPic.Image = _mulMath.GetScreen();
 		}
 
@@ -499,7 +506,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbDiaScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_diaMath, sender, false);
+			LayerManager.AsignLayers(this, 1, _diaMath, sender, false);
 			pcbDiaMainPic.Image = _diaMath.GetScreen();
 		}
 
@@ -830,7 +837,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbPosScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_posMath, sender, false);
+			LayerManager.AsignLayers(this, 1, _posMath, sender, false);
 			pcbPosMainPic.Image = _posMath.GetScreen();
 		}
 
@@ -856,7 +863,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbImgSrnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_imgMath, sender, false);
+			LayerManager.AsignLayers(this, 1, _imgMath, sender, false);
 			pcbImgMainPic.Image = _imgMath.GetScreen();
 		}
 
@@ -1015,7 +1022,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbTblScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_tblMath, sender, false);
+			LayerManager.AsignLayers(this, 1, _tblMath, sender, false);
 			pcbTblMainPic.Image = _tblMath.GetScreen();
 		}
 
@@ -1066,6 +1073,5 @@ namespace HDMA_Generator_Tool
 			SetMath(_tblMath, rdbTblSub.Checked, chbTblHlf.Checked, pcbTblMainPic);
 		}
 		#endregion
-
 	}
 }

@@ -163,6 +163,7 @@ namespace HDMA_Generator_Tool
 		/// </summary>
 		/// <param name="Math">The ColorMath that will get the images assigned to it.</param>
 		/// <param name="Selector">The ComboBox containing BitmapCollection objects.</param>
+		[Obsolete("Use AsignLayers(ITab, int, ColorMath, object, bool")]
 		public static void AsignLayers(EffectClasses.ColorMath Math, object Selector)
 		{
 			AsignLayers(Math, Selector, true);
@@ -174,6 +175,7 @@ namespace HDMA_Generator_Tool
 		/// <param name="Math">The ColorMath that will get the images assigned to it.</param>
 		/// <param name="Selector">The ComboBox containing BitmapCollection objects.</param>
 		/// <param name="dontColor"><c>True</c> will overwrite the FixedColor property of the ColorMath with the one from the BitmapCollection.</param>
+		[Obsolete("Use AsignLayers(ITab, int, ColorMath, object, bool")]
 		public static void AsignLayers(EffectClasses.ColorMath Math, object Selector, bool setColor)
 		{
 			//The first Object is the option to use a screenshot.
@@ -191,6 +193,85 @@ namespace HDMA_Generator_Tool
 					bc.FixedColor = Color.Transparent;
 				Math.FixedColor = EffectClasses.BitmapEffects.FromColor(bc.FixedColor, bc.BG1.Size);
 			}
+		}
+
+
+		/// <summary>
+		/// Asign the Bitmaps to a ColorMath object from a ComboBox.
+		/// </summary>
+		/// <param name="tab">The gui calling this method</param>
+		/// <param name="Math">The ColorMath that will get the images assigned to it.</param>
+		/// <param name="Selector">The ComboBox containing BitmapCollection objects.</param>
+		public static void AsignLayers(ITab tab, int layer, EffectClasses.ColorMath Math, object Selector)
+		{
+			AsignLayers(tab, layer, Math, Selector, true);
+		}
+
+		/// <summary>
+		/// Asign the Bitmaps to a ColorMath object from a ComboBox.
+		/// </summary>
+		/// <param name="tab">The gui calling this</param>
+		/// <param name="layer"></param>Which layer the screenshot will be used on.
+		/// <param name="math">The ColorMath that will get the images assigned to it.</param>
+		/// <param name="Selector">The ComboBox containing BitmapCollection objects.</param>
+		/// <param name="setColor"><c>True</c> will overwrite the FixedColor property of the ColorMath with the one from the BitmapCollection.</param>
+		public static void AsignLayers(ITab tab, int layer, EffectClasses.ColorMath math, object Selector, bool setColor)
+		{
+			//remove image of current tab from screenshot collection.
+			int index = tab.GetTabControl().SelectedIndex;
+			var tabAsSS = tab as IScreenshotUser;
+			if(tabAsSS != null)
+			{
+				if (tabAsSS.ScreenshotsImages[index] != null)
+					tabAsSS.ScreenshotsImages[index].Dispose();
+				tabAsSS.ScreenshotsImages[index] = null;
+			}
+
+			//The first Object is the option to use a screenshot.
+			if (((ComboBox)Selector).SelectedIndex == 0)
+			{
+				if (tab is IScreenshotUser)
+				{					
+					var screenshot = FetchScreenshot();
+					if (screenshot == null)
+						((ComboBox)Selector).SelectedIndex = 1;
+					else
+					{
+						tabAsSS.ScreenshotsImages[index] = screenshot;
+						math.OBJ = new Bitmap(256, 224);
+
+						math.BG1 = (layer == 1) ? screenshot : new Bitmap(256, 224);
+						math.BG2 = (layer == 2) ? screenshot : new Bitmap(256, 224);
+						math.BG3 = (layer == 3) ? screenshot : new Bitmap(256, 224);
+						math.BG4 = (layer == 4) ? screenshot : new Bitmap(256, 224);
+					}
+				}
+				else
+				{
+					MessageBox.Show("This tab is not supporting the use of screenshots.", "Not Implemented", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					((ComboBox)Selector).SelectedIndex = 1;
+				}
+			}
+			else
+			{
+				EffectClasses.BitmapCollection bc = (EffectClasses.BitmapCollection)((ComboBox)Selector).SelectedItem;
+				math.Collection = bc;
+				if (setColor)
+				{
+					if (bc.FixedColor == null)
+						bc.FixedColor = Color.Transparent;
+					math.FixedColor = EffectClasses.BitmapEffects.FromColor(bc.FixedColor, bc.BG1.Size);
+				}
+			}
+		}
+
+		private static Bitmap FetchScreenshot()
+		{
+			OpenFileDialog ofd = new OpenFileDialog();
+			ofd.Title = "Image files|*.jpeg;*.png;*.jpg;*.gif";
+			if (ofd.ShowDialog() != DialogResult.OK)
+				return null;
+			else return new Bitmap(Image.FromFile(ofd.FileName), new Size(256, 224));
 		}
 	}
 }

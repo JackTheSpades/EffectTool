@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -32,6 +33,11 @@ namespace HDMA_Generator_Tool
 		/// </summary>
 		/// <returns>The screen currently displayed by the TabControl</returns>
 		System.Drawing.Bitmap GetScreen();
+	}
+
+	public interface IScreenshotUser : ITab
+	{
+		Bitmap[] ScreenshotsImages { get; }
 	}
 	
 	/// <summary>

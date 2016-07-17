@@ -296,6 +296,11 @@ namespace HDMA_Generator_Tool
 			}
 		}
 
+		/// <summary>
+		/// Makes a screenshot of the current image displayed in the... display
+		/// </summary>
+		/// <param name="sender">Caller of the event</param>
+		/// <param name="e">args. Unused.</param>
 		private void screenshotToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (ActiveTab == "")

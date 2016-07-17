@@ -10,7 +10,7 @@ using System.Diagnostics;
 
 namespace HDMA_Generator_Tool
 {
-	public partial class HDMA_Waves_GUI : Form, ITab, IAnimated
+	public partial class HDMA_Waves_GUI : Form, IScreenshotUser, IAnimated
 	{
 		#region ITab
 
@@ -35,6 +35,9 @@ namespace HDMA_Generator_Tool
 		}
 		public ComboBox[] ScreenSelectors { get; set; }
 
+		#endregion
+		#region IScreenshotUser
+		public Bitmap[] ScreenshotsImages { get; private set; }
 		#endregion
 		#region IAnimated
 		public void StopAnimation()
@@ -66,6 +69,8 @@ namespace HDMA_Generator_Tool
 		public HDMA_Waves_GUI()
 		{
 			InitializeComponent();
+
+			ScreenshotsImages = new Bitmap[tbc.TabCount];
 
 			ScreenSelectors = new ComboBox[]
 			{
@@ -160,9 +165,9 @@ namespace HDMA_Generator_Tool
 
 		private void cmbHorScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_xMathSave, sender);
-			_xMathDisordered.FixedColor = _xMathSave.FixedColor;
-			rdbHorLay_CheckedChanged(sender, e);
+			LayerManager.AsignLayers(this, 0, _xMathSave, sender);	//fetch new inmage or screenshot (if screenshot, math will only have blank images)
+			//_xMathDisordered.FixedColor = _xMathSave.FixedColor;	//set fixed color...
+			rdbHorLay_CheckedChanged(sender, e);					//update disordered images based on the loaded one.
 		}
 
 		private void chbHorAni_CheckedChanged(object sender, EventArgs e)
@@ -205,24 +210,27 @@ namespace HDMA_Generator_Tool
 				b.Dispose();
 			_xMathDisordered.Collection = (EffectClasses.BitmapCollection)_xMathSave.Collection.Clone();
 
+			var ss = ScreenshotsImages[tbc.SelectedIndex];
+
 			if(rdbHorLay1.Checked)
 			{
 				_xEffect.Layers = EffectClasses.LayerRegister.Layer1_X;
-				_xEffect.Original = _xMathSave.BG1;
+				_xEffect.Original = (ss == null) ? _xMathSave.BG1 : ss;
 				_xMathDisordered.BG1 = _xEffect.StaticPic();
 			}
 			else if (rdbHorLay2.Checked)
 			{
 				_xEffect.Layers = EffectClasses.LayerRegister.Layer2_X;
-				_xEffect.Original = _xMathSave.BG2;
+				_xEffect.Original = (ss == null) ? _xMathSave.BG2 : ss;
 				_xMathDisordered.BG2 = _xEffect.StaticPic();
 			}
 			else if (rdbHorLay3.Checked)
 			{
 				_xEffect.Layers = EffectClasses.LayerRegister.Layer3_X;
-				_xEffect.Original = _xMathSave.BG3;
+				_xEffect.Original = (ss == null) ? _xMathSave.BG3 : ss;
 				_xMathDisordered.BG3 = _xEffect.StaticPic();
 			}
+			
 			pcbHorMainPic.Image = _xMathDisordered.GetScreen();
 		}
 
@@ -313,7 +321,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbVerScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_yMathSave, sender);
+			LayerManager.AsignLayers(this, 0, _yMathSave, sender);
 			_yMathDisordered.FixedColor = _yMathSave.FixedColor;
 			rdbVerLay_CheckedChanged(sender, e);
 		}
@@ -356,16 +364,18 @@ namespace HDMA_Generator_Tool
 				b.Dispose();
 			_yMathDisordered.Collection = (EffectClasses.BitmapCollection)_yMathSave.Collection.Clone();
 
+			var ss = ScreenshotsImages[tbc.SelectedIndex];
+
 			if (rdbVerLay1.Checked)
 			{
 				_yEffect.Layers = EffectClasses.LayerRegister.Layer1_Y;
-				_yEffect.Original = _yMathSave.BG1;
+				_yEffect.Original = (ss == null) ? _yMathSave.BG1 : ss;
 				_yMathDisordered.BG1 = _yEffect.StaticPic();
 			}
 			else if (rdbVerLay2.Checked)
 			{
 				_yEffect.Layers = EffectClasses.LayerRegister.Layer2_Y;
-				_yEffect.Original = _yMathSave.BG2;
+				_yEffect.Original = (ss == null) ? _yMathSave.BG2 : ss;
 				_yMathDisordered.BG2 = _yEffect.StaticPic();
 			}
 			pcbVerMainPic.Image = _yMathDisordered.GetScreen();
