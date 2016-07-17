@@ -1,0 +1,191 @@
+======================================
+[b] Best in Show[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[7]</td><td>Wakana</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[6]</td><td>Snifit</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[5]</td><td>JackTheSpades</td></tr>
+</table>
+
+======================================
+[b] Best C3 Attendee *[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[4]</td><td>[url=http://www.smwcentral.net/?p=profile&id=8251]8251[/url]</td></tr>
+<tr><td><span style="color: #F0D700;">1st</span></td><td>[4]</td><td>[url=http://www.smwcentral.net/?p=profile&id=17183]17183[/url]</td></tr>
+<tr><td><span style="color: #F0D700;">1st</span></td><td>[4]</td><td>[url=http://www.smwcentral.net/?p=profile&id=176]176[/url]</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[3]</td><td>[url=http://www.smwcentral.net/?p=profile&id=2700]2700[/url]</td></tr>
+</table>
+
+======================================
+[b] Best Feedback *[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[3]</td><td>[url=http://www.smwcentral.net/?p=profile&id=8903]8903[/url]</td></tr>
+</table>
+
+======================================
+[b] Best Newcomer *[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[7]</td><td>[url=http://www.smwcentral.net/?p=profile&id=23783]23783[/url]</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[3]</td><td>[url=http://www.smwcentral.net/?p=profile&id=176]176[/url]</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[2]</td><td>[url=http://www.smwcentral.net/?p=profile&id=26866]26866[/url]</td></tr>
+</table>
+
+======================================
+[b] Vision of the Future (Something you predict will alter the future of SMW hacking)[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[14]</td><td>Vitor Vilela</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[7]</td><td>JackTheSpades</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[7]</td><td>anonimzwx</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[5]</td><td>Horrowind</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[5]</td><td>p4plus2</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[5]</td><td>Von Fahrenheit</td></tr>
+</table>
+
+======================================
+[b] Best Non-SMW Item[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[7]</td><td>dax</td></tr>
+<tr><td><span style="color: #F0D700;">1st</span></td><td>[7]</td><td>MrRean</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[6]</td><td>Mr. GreenThunder</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[4]</td><td>Ermelber</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[4]</td><td>OrphenX</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[4]</td><td>WeegeeBen</td></tr>
+</table>
+
+======================================
+[b] Biggest Surprise[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[4]</td><td>Medic</td></tr>
+<tr><td><span style="color: #F0D700;">1st</span></td><td>[4]</td><td>Vitor Vilela</td></tr>
+<tr><td><span style="color: #F0D700;">1st</span></td><td>[4]</td><td>Alcaro</td></tr>
+<tr><td><span style="color: #F0D700;">1st</span></td><td>[4]</td><td>S.N.N.</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[3]</td><td>WhiteYoshiEgg</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[3]</td><td>Horrowind</td></tr>
+</table>
+
+======================================
+[b] Short but Sweet[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[6]</td><td>S.N.N.</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[3]</td><td>Mr. GreenThunder</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[3]</td><td>Koopster</td></tr>
+</table>
+
+======================================
+[b] Honorary Mention (Something worth a trophy but doesn't fit in any other category)[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[5]</td><td>Wakana</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[4]</td><td>Snifit</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[3]</td><td>Vitor Vilela</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[3]</td><td>Alcaro</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[3]</td><td>Vitor Vilela</td></tr>
+</table>
+
+======================================
+[b] Weirdest Item[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[3]</td><td>S.N.N.</td></tr>
+<tr><td><span style="color: #F0D700;">1st</span></td><td>[3]</td><td>Snifit</td></tr>
+</table>
+
+======================================
+[b] Best Finished Hack[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[9]</td><td>Golden Yoshi</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[8]</td><td>Luks</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[7]</td><td>S.N.N.</td></tr>
+</table>
+
+======================================
+[b] Best Demo Hack[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[11]</td><td>Eevee</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[9]</td><td>Mayonnai</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[6]</td><td>Ruberjig</td></tr>
+</table>
+
+======================================
+[b] Best Joke Hack[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[12]</td><td>Berkay</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[5]</td><td>Face</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[4]</td><td>Gregor</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[4]</td><td>nick 139</td></tr>
+</table>
+
+======================================
+[b] Best Screenshots[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[8]</td><td>Lightvayne</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[5]</td><td>Mayonnai</td></tr>
+</table>
+
+======================================
+[b] Best Trailer[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[10]</td><td>aj6666</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[6]</td><td>OrphenX</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[3]</td><td>Luks</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[3]</td><td>Alex No</td></tr>
+</table>
+
+======================================
+[b] Best Level Design[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[5]</td><td>Mayonnai</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[4]</td><td>cyphermur9t</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[3]</td><td>Luks</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[3]</td><td>Mr. GreenThunder</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[3]</td><td>Eevee</td></tr>
+</table>
+
+======================================
+[b] Best Graphics[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[14]</td><td>Gamma V</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[12]</td><td>Carld923</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[10]</td><td>Gregor</td></tr>
+</table>
+
+======================================
+[b] Most Creative[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[5]</td><td>Eevee</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[4]</td><td>Luks</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[4]</td><td>Medic</td></tr>
+</table>
+
+======================================
+[b] Most Impressive[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[10]</td><td>Ladida</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[6]</td><td>Vitor Vilela</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[5]</td><td>Mr. GreenThunder</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[5]</td><td>Medic</td></tr>
+</table>
+
+======================================
+[b] Best Sprite[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[13]</td><td>LX5</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[12]</td><td>anonimzwx</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[9]</td><td>Medic</td></tr>
+</table>
+
+======================================
+[b] Best ASM Hack[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[11]</td><td>LX5</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[7]</td><td>Von Fahrenheit</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[5]</td><td>Medic</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[5]</td><td>Ladida</td></tr>
+</table>
+
+======================================
+[b] Best Music[/b]
+--------------------------------------
+<table><tr><td><span style="color: #F0D700;">1st</span></td><td>[17]</td><td>Wakana</td></tr>
+<tr><td><span style="color: #F0D700;">1st</span></td><td>[17]</td><td>Masterlink</td></tr>
+<tr><td><span style="color: #C0C0C0;">2nd</span></td><td>[11]</td><td>LadiesMan217</td></tr>
+<tr><td><span style="color: #CD7F32;">3rd</span></td><td>[8]</td><td>Izuna</td></tr>
+</table>
+

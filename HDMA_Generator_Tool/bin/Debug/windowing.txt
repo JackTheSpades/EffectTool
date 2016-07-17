@@ -1,0 +1,109 @@
+		const bool other = false;
+
+        private void Convert(Bitmap bmp)
+        {
+            if (bmp.Width != 256 || bmp.Height != 224)
+            {
+                MessageBox.Show("Image size must be 256x224.");
+                return;
+            }
+
+            Bitmap output = new Bitmap(256, 224, System.Drawing.Imaging.PixelFormat.Format24bppRgb); 
+            StringBuilder sb = new StringBuilder("db ");
+
+            for (int y = 0; y < 224; ++y)
+            {
+                int firstPixel = bmp.GetPixel(0, y).ToArgb();
+                int lastPixel = bmp.GetPixel(255, y).ToArgb();
+                int x1 = 255, x2 = 0;
+				if (!other)
+				{
+					for (int x = 0 + 1; x < 256; ++x)
+					{
+						if (firstPixel != bmp.GetPixel(x, y).ToArgb())
+						{
+							x1 = x;
+							break;
+						}
+					}
+					for (int x = 255 - 1; x >= 0; --x)
+					{
+						if (firstPixel != bmp.GetPixel(x, y).ToArgb())
+						{
+							x2 = x;
+							break;
+						}
+					}
+				}
+				else
+				{
+					//int radius=32;
+					//int xx = 32;
+					//int yy = 32;
+					//x1 = (int)Math.Sqrt(Math.Max(0, radius * radius));
+
+					//int eq = (int)Math.Sqrt(Math.Max(0, radius * radius - (y - yy) * (y - yy)));
+					
+					//x1 = -eq + xx;
+					//x2 = eq + xx;
+
+					var points = new PointF[10];
+
+					for (int i = 0; i < 10; ++i)
+					{
+						double p = Math.PI * 2 * i / 10.0;
+						points[i] = new PointF((float)Math.Sin(p), (float)-Math.Cos(p));
+
+						if (i % 2 == 1)
+						{
+							points[i].X *= 1 / 2f; //2 / 5f;
+							points[i].Y *= 1 / 2f; //2 / 5f;
+						}
+					}
+
+					for (int i=0;i<10;++i)
+					{
+						PointF p = points[i-1];
+						PointF p2 = points[i];
+						if ((int)(p.Y * 20 + 20) == y)
+						{
+							x1 = (int)p.X;
+							x2 = (int)p.X + (int)Math.Abs(p2.X - p.X);
+						}
+					}
+
+					x1 = Math.Min(255, Math.Max(0, x1));
+					x2 = Math.Min(255, Math.Max(0, x2));
+				}
+
+                for (int x = x1; x < x2; ++x)
+                {
+                    output.SetPixel(x, y, Color.White);
+                }
+                for (int x = 0; x < x1; ++x)
+                {
+                    output.SetPixel(x, y, Color.Black);
+                }
+                for (int x = 255; x >= x2; --x)
+                {
+                    output.SetPixel(x, y, Color.Black);
+                }
+
+                if ((y & 7) == 0 && y != 0)
+                {
+                    sb.Remove(sb.Length - 1, 1);
+                    sb.AppendLine();
+                    sb.Append("db ");
+                }
+                sb.AppendFormat("${0:X2},${1:X2},", x1, x2);
+            }
+
+            if (sb[sb.Length - 1] == ',')
+            {
+                sb.Remove(sb.Length - 1, 1);
+            }
+
+            pictureBox1.Image = bmp;
+            pictureBox2.Image = output;
+            textBox1.Text = sb.ToString();
+        }
