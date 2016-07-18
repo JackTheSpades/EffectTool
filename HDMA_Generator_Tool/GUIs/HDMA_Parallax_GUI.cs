@@ -11,7 +11,7 @@ using Extansion.Int;
 
 namespace HDMA_Generator_Tool
 {
-	public partial class HDMA_Parallax_GUI : Form, ITab, IAnimated
+	public partial class HDMA_Parallax_GUI : Form, IScreenshotUser, IAnimated
 	{
 		#region ITab
 
@@ -45,6 +45,9 @@ namespace HDMA_Generator_Tool
 		public ComboBox[] ScreenSelectors { get; set; }
 
 		#endregion
+		#region IScreenshotUser
+		public Bitmap[] ScreenshotsImages { get; private set; }
+		#endregion
 		#region IAnimated
 		public void StopAnimation()
 		{
@@ -58,6 +61,8 @@ namespace HDMA_Generator_Tool
 		public HDMA_Parallax_GUI()
 		{
 			InitializeComponent();
+
+			ScreenshotsImages = new Bitmap[tbc.TabCount];
 
 			ScreenSelectors = new ComboBox[]
 			{
@@ -468,7 +473,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbRelScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_relMathSave, sender);
+			LayerManager.AsignLayers(this, 0, _relMathSave, sender);
 			_relMathDisordered.FixedColor = _relMathSave.FixedColor;
 			UpdateRelative();
 		}
@@ -503,23 +508,24 @@ namespace HDMA_Generator_Tool
 			foreach (Bitmap b in _relMathDisordered.Collection)
 				b.Dispose();
 			_relMathDisordered.Collection = (EffectClasses.BitmapCollection)_relMathSave.Collection.Clone();
+			var ss = ScreenshotsImages[tbc.SelectedIndex];
 
 			if (cmbRelLay.SelectedIndex == 0)
 			{
 				_relEffect.Layers = EffectClasses.LayerRegister.Layer1_X;
-				_relEffect.Original = _relMathSave.BG1;
+				_relEffect.Original = (ss == null) ? _relMathSave.BG1 : ss;
 				_relMathDisordered.BG1 = _relEffect.StaticPic();
 			}
 			else if (cmbRelLay.SelectedIndex == 1)
 			{
 				_relEffect.Layers = EffectClasses.LayerRegister.Layer2_X;
-				_relEffect.Original = _relMathSave.BG2;
+				_relEffect.Original = (ss == null) ? _relMathSave.BG2 : ss;
 				_relMathDisordered.BG2 = _relEffect.StaticPic();
 			}
 			else if (cmbRelLay.SelectedIndex == 2)
 			{
 				_relEffect.Layers = EffectClasses.LayerRegister.Layer3_X;
-				_relEffect.Original = _relMathSave.BG3;
+				_relEffect.Original = (ss == null) ? _relMathSave.BG3 : ss;
 				_relMathDisordered.BG3 = _relEffect.StaticPic();
 			}
 			pcbRelMainPic.Image = _relMathDisordered.GetScreen();

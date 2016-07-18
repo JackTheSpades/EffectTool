@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace HDMA_Generator_Tool
 {
-	public partial class HDMA_Mosaic_GUI : Form, ITab
+	public partial class HDMA_Mosaic_GUI : Form, IScreenshotUser
 	{
 		#region ITab Interface
 
@@ -48,6 +48,9 @@ namespace HDMA_Generator_Tool
 		}
 
 		#endregion
+		#region IScreenshotUser
+		public Bitmap[] ScreenshotsImages { get; private set; }
+		#endregion
 
 		private EffectClasses.PixelationHDMA _whole = new EffectClasses.PixelationHDMA();
 		private EffectClasses.ColorMath _wholeMath = new EffectClasses.ColorMath();
@@ -60,6 +63,8 @@ namespace HDMA_Generator_Tool
 		public HDMA_Mosaic_GUI()
 		{
 			InitializeComponent();
+
+			ScreenshotsImages = new Bitmap[tbc.TabCount];
 
 			//ITab interface
 			ScreenSelectors = new ComboBox[]
