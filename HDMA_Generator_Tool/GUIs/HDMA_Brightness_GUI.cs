@@ -14,7 +14,7 @@ using Extansion.Int;
 
 namespace HDMA_Generator_Tool
 {
-	public partial class HDMA_Brightness_GUI : Form, ITab
+	public partial class HDMA_Brightness_GUI : Form, IScreenshotUser
 	{
 		#region ITab
 
@@ -52,10 +52,17 @@ namespace HDMA_Generator_Tool
 		}
 
 		#endregion
+		#region IScreenshotUser
+
+		public Bitmap[] ScreenshotsImages { get; private set; }
+
+		#endregion
 		
 		public HDMA_Brightness_GUI()
 		{
 			InitializeComponent();
+
+			ScreenshotsImages = new Bitmap[tbc.TabCount];
 
 			ScreenSelectors = new ComboBox[]{
 				cmbSmpScnSel,
@@ -135,7 +142,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbSmpScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_smpMath, sender);
+			LayerManager.AsignLayers(this, 1, _smpMath, sender);
 			UpdateSimpleScreen();
 		}
 
@@ -291,7 +298,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbIndScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_indMath, sender);
+			LayerManager.AsignLayers(this, 1, _indMath, sender);
 			UpdateIndividual();
 		}
 
@@ -318,7 +325,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbTblScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_tblMath, sender);
+			LayerManager.AsignLayers(this, 1, _tblMath, sender);
 			pcbTblMainPic.Image = EffectClasses.BitmapEffects.OverlapImages(_tblEffect.EffectImage, _tblMath.GetScreen());
 		}
 
