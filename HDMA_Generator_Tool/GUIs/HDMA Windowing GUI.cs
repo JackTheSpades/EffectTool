@@ -12,7 +12,7 @@ namespace HDMA_Generator_Tool
 {
 	public partial class HDMA_Windowing_GUI : Form, ITab
 	{
-
+		#region ITab
 		public ComboBox[] ScreenSelectors { get; set; }
 		public TabControl GetTabControl()
 		{
@@ -40,7 +40,11 @@ namespace HDMA_Generator_Tool
 				return (Bitmap)pcbImgMainPic.Image;
 			return null;
 		}
+		#endregion
 
+		#region IScreenshotUser
+		public Bitmap[] ScreenshotsImages { get; private set; }
+		#endregion
 
 		public enum RenderType { Color, Transparent, Points }
 
@@ -48,12 +52,11 @@ namespace HDMA_Generator_Tool
 		{
 			InitializeComponent();
 
+			ScreenshotsImages = new Bitmap[tbc.TabCount];
 			ScreenSelectors = new ComboBox[]
 			{
 				cmbImgScnSel,
 			};
-
-
 
 			lsbImgPoi.Items.Add(new Point(0, 0));
 
@@ -172,7 +175,7 @@ namespace HDMA_Generator_Tool
 
 		private void cmbImgScnSel_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LayerManager.AsignLayers(_imgMath, sender);
+			LayerManager.AsignLayers(this, 0, _imgMath, sender);
 			pcbImgMainPic.Image = _imgMath.GetScreen();
 		}
 

@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace HDMA_Generator_Tool
 {
-	public partial class HDMA_Mosaic_GUI : Form, IScreenshotUser
+	public partial class HDMA_Mosaic_GUI : Form, ITab
 	{
 		#region ITab Interface
 
